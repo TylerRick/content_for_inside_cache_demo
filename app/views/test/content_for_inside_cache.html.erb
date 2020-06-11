@@ -1,11 +1,12 @@
 <%- content_for :title, "My Title" -%>
+<%- content_for :footer, 'Some default footer' -%>
 <% cache do %>
   <%- content_for :title, ": Enhanced!" -%>
 
   <p>This fragment is cached</p>
 
   <p>(Cached at: <%= Time.now.strftime('%Y-%m-%d %H:%M:%S.%3N') %>)</p>
-  <% content_for(:footer) do %>
+  <% content_for(:footer, flush: true) do %>
     <p>Content for footer from within cached fragment</p>
   <% end %>
 <% end %>

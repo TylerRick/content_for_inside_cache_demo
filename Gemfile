@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
-gem 'rails', '~> 5.2'
+gem 'rails', github: 'TylerRick/rails', tag: 'content_for_inside_cache-v2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
